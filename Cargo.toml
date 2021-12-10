@@ -5,24 +5,28 @@ authors = ["Dominik Mydlil <dominik.mydlil@outlook.com>"]
 edition = "2018"
 
 [dependencies]
-nom = "5.1.1"
-crc = "1.8.1"
-itertools = "0.9.0"
-clap = "3.0.0-beta.1"
-num-format = "0.4.0"
-ffmpeg4-ffi = "0.3.8"
-simplelog = "0.8.0"
-log = "0.4.8"
+nom = "5"
+crc = "1"
+itertools = "0.9"
+clap = "=3.0.0-beta.1"
+num-format = "0.4"
+ffmpeg4-ffi = "0.3"
+simplelog = "0.8"
+log = "0.4"
 # clap references 2.3.0, but 2.3.0's doc build is broken
 # https://github.com/dylni/os_str_bytes/issues/2
-os_str_bytes = "2.3.1"
-mpls = "0.2.0"
-indicatif = "0.14.0"
+#os_str_bytes = "2.3.1"
+mpls = "0.2"
+indicatif = "0.14"
 
 [build-dependencies]
-fs_extra = "1.1.0"
+fs_extra = "1"
 
 [build-dependencies.reqwest]
-version = "0.10.4"
+version = "0.10"
 default-features = false
 features = ["default-tls", "blocking"]
+
+[profile.release]
+lto = true
+codegen-units = 1
